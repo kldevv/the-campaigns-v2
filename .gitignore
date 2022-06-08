@@ -1,0 +1,29 @@
+# Yarn
+.yarn/
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+!.yarn/cache
+
+# Dependency
+node_modules/
+jspm_packages/
+package-lock.json
+.pnp.cjs
+.pnp.loader.mjs
+
+# Local
+.env
+
+# Misc
+.DS_Store
+*.pem
+.local
+
+# Next
+/.next/
+/out/
+
+

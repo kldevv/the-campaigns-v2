@@ -1,0 +1,18 @@
+{
+  "name": "the-campaigns-v2",
+  "license": "MIT",
+  "packageManager": "yarn@3.2.1",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.8",
+    "fs-extra": "^10.1.0",
+    "ganache": "^7.1.0",
+    "mocha": "^10.0.0",
+    "next": "^12.1.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.1.2",
+    "solc": "^0.8.13",
+    "web3": "^1.7.3"
+  }
+}

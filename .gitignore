@@ -19,11 +19,13 @@ package-lock.json
 
 # Misc
 .DS_Store
+**/.DS_Store
 *.pem
 .local
 
 # Next
 /.next/
 /out/
+next-env.d.ts
 
 

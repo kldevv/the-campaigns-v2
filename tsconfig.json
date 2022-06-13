@@ -1,0 +1,48 @@
+{
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
+  "compilerOptions": {
+    "jsx": "preserve",
+    "baseUrl": "./src/",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "paths": {
+      "^@styles": ["./styles"],
+      "^@styles/*": ["./styles/*"],
+      "^@layout": ["./layout"],
+      "^@layout/*": ["./layout/*"],
+      "^@components": ["./components"],
+      "^@components/*": ["./components/*"]
+    }
+  },
+  "target": "es5",
+  "jsx": "preserve",
+  "module": "esnext",
+  "strict": true,
+  "allowJs": true,
+  "incremental": true,
+  "include": [
+    "**/*.ts",
+    "next-env-.d.ts",
+    "**/*.tsx"
+    // ".storybook/**/*.ts",
+    // ".storybook/**/*.tsx"
+  ],
+  "exclude": ["node_module"]
+}

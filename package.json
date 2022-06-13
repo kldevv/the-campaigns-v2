@@ -8,11 +8,24 @@
     "ganache": "^7.1.0",
     "mocha": "^10.0.0",
     "next": "^12.1.6",
+    "next-translate": "^1.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.1.2",
     "solc": "^0.8.13",
     "web3": "^1.7.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.30.0",
+    "typescript": "^4.7.3"
+  },
+  "scripts": {
+    "dev": "next dev"
   }
 }

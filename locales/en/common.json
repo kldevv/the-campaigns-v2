@@ -1,0 +1,15 @@
+{
+  "logo": {
+    "name": "TheCampaign"
+  },
+  "footer": {
+    "welcome": "Welcome to TheCampaign :)"
+  },
+  "header": {
+    "menuItems": {
+      "explore": "Explore",
+      "create": "Create",
+      "about": "About"
+    }
+  }
+}

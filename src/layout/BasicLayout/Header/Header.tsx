@@ -5,6 +5,7 @@ import React, { useCallback } from "react";
 import { routes } from "routes/routes";
 import { Icon, Menu } from "semantic-ui-react";
 import { Logo } from "^@components/Logo/Logo";
+import { WalletButton } from "^@containers/Layout/WalletButton/WalletButton";
 import { color, font } from "^@styles/global";
 
 export const Header = () => {
@@ -12,18 +13,24 @@ export const Header = () => {
   const { t } = useTranslation("common");
 
   interface MenuButtonProps {
+    /**
+     * Url on to direct on click.
+     */
     href: string;
+    /**
+     * Content to show on the button.
+     */
     content: string;
   }
 
-  const MenuButton = ({ href, content }: MenuButtonProps) => {
+  const CustomizedMenuItem = ({ href, content }: MenuButtonProps) => {
     const onSwitchItem = useCallback((e: React.MouseEvent) => {
       e.preventDefault();
       router.push(href);
     }, []);
 
     const selected = router.pathname.startsWith(href);
-    console.log(router.pathname, href);
+
     return (
       <Menu.Item
         active={selected}
@@ -54,6 +61,7 @@ export const Header = () => {
       size="huge"
       tabular
       fixed="top"
+      stackable
       style={{
         borderRadius: "0px",
         backgroundColor: color.white,
@@ -96,29 +104,30 @@ export const Header = () => {
         </Menu.Item>
       ) : null} */}
       <Menu.Menu position="right">
-        <MenuButton
+        <CustomizedMenuItem
           content={t("header.menuItems.explore")}
           href={routes.common.explore}
         />
-        <MenuButton
+        <CustomizedMenuItem
           content={t("header.menuItems.create")}
           href={routes.common.create}
         />
-        <MenuButton
+        <CustomizedMenuItem
           content={t("header.menuItems.about")}
           href={routes.common.about}
         />
-        {/* <Menu.Item>
-          <MenuWalletButton walletStatus={walletStatus} account={account} />
-        </Menu.Item> */}
-        <Link
-          href="https://github.com/linstudyhard9527/contract-blocksource.git"
-          passHref
-        >
-          <Menu.Item>
+        <Menu.Item>
+          <WalletButton />
+        </Menu.Item>
+        <Menu.Item>
+          <a
+            target="_blank"
+            href={routes.external.github}
+            rel="noopener noreferrer"
+          >
             <Icon name="github" size="large" color="black" />
-          </Menu.Item>
-        </Link>
+          </a>
+        </Menu.Item>
       </Menu.Menu>
     </Menu>
   );

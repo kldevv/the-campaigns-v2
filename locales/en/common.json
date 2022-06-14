@@ -11,5 +11,8 @@
       "create": "Create",
       "about": "About"
     }
+  },
+  "walletButton": {
+    "connect": "Connect Wallet"
   }
 }

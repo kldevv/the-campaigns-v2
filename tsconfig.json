@@ -28,7 +28,17 @@
       "^@layout": ["./layout"],
       "^@layout/*": ["./layout/*"],
       "^@components": ["./components"],
-      "^@components/*": ["./components/*"]
+      "^@components/*": ["./components/*"],
+      "^@hooks": ["./hooks"],
+      "^@hooks/*": ["./hooks/*"],
+      "^@routes": ["./routes"],
+      "^@routes/*": ["./routes/*"],
+      "^@contexts": ["./contexts"],
+      "^@contexts/*": ["./contexts/*"],
+      "^@containers": ["./containers"],
+      "^@containers/*": ["./containers/*"],
+      "^@services": ["./services"],
+      "^@services/*": ["./services/*"]
     }
   },
   "target": "es5",

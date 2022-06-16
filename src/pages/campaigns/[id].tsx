@@ -1,8 +1,8 @@
 import React from "react";
 import { BasicScreenContainer } from "^@components/screen";
 
-const About = () => {
+const CampaignDetail = () => {
   return <BasicScreenContainer></BasicScreenContainer>;
 };
 
-export default About;
+export default CampaignDetail;

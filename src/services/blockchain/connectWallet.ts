@@ -1,6 +1,8 @@
+import { windowInstalled } from "./types";
+
 export const connectWallet = async () => {
   try {
-    await (window as any).ethereum.request({
+    await (window as windowInstalled).ethereum.request({
       method: "eth_requestAccounts",
     });
   } catch (err) {

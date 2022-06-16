@@ -1,15 +1,48 @@
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import React from "react";
-import { Container, Grid, Header, Icon, Segment } from "semantic-ui-react";
+import {
+  Container,
+  Grid,
+  Header,
+  Icon,
+  Segment,
+  SemanticWIDTHS,
+} from "semantic-ui-react";
 import { CustomizedButton } from "^@components/common/CustomizedButton/CustomizedButton";
-import { InfoGridColumn } from "^@components/screen/InfoGridColumn/InfoGridColumn";
+import { InfoGridColumn, InfoGridColumnProps } from "^@components/screen";
 import { routes } from "^@routes/routes";
 import { color, font } from "^@styles/global";
 
 export const IndexScreen3 = () => {
   const { t } = useTranslation("common");
   const router = useRouter();
+
+  const infoGridData: InfoGridColumnProps[] = [
+    {
+      title: t("screens.index.screen3.info.initiator.title"),
+      icon: "coffee",
+      description: t("screens.index.screen3.info.initiator.description"),
+    },
+    {
+      title: t("screens.index.screen3.info.patron.title"),
+      icon: "users",
+      description: t("screens.index.screen3.info.patron.description"),
+    },
+  ];
+
+  const infoGridColumns = infoGridData.map(
+    ({ title, icon, description }: InfoGridColumnProps, index) => {
+      return (
+        <InfoGridColumn
+          key={index}
+          title={title}
+          icon={icon}
+          description={description}
+        />
+      );
+    }
+  );
 
   return (
     <Segment
@@ -49,17 +82,12 @@ export const IndexScreen3 = () => {
             router.push(routes.common.about);
           }}
         />
-        <Grid columns={2} stackable style={{ paddingBottom: "2em" }}>
-          <InfoGridColumn
-            title={t("screens.index.screen3.info.initiator.title")}
-            icon="coffee"
-            description={t("screens.index.screen3.info.initiator.description")}
-          />
-          <InfoGridColumn
-            title={t("screens.index.screen3.info.patron.title")}
-            icon="users"
-            description={t("screens.index.screen3.info.patron.description")}
-          />
+        <Grid
+          columns={Math.min(infoGridData.length, 10) as SemanticWIDTHS}
+          stackable
+          style={{ paddingBottom: "2em" }}
+        >
+          {infoGridColumns}
         </Grid>
       </Container>
     </Segment>

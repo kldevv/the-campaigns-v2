@@ -1,6 +1,6 @@
 export const routes = {
   common: {
-    explore: "/explore",
+    explore: "/campaigns",
     create: "/create-campaign",
     about: "/about",
   },

@@ -1,7 +1,7 @@
 import useTranslation from "next-translate/useTranslation";
 import React from "react";
 import { Container, Header, Segment } from "semantic-ui-react";
-import { WalletButton } from "^@containers/common/WalletButton/WalletButton";
+import { WalletButton } from "^@containers/common";
 import { color, font } from "^@styles/global";
 
 export const IndexScreen1 = () => {
@@ -41,6 +41,13 @@ export const IndexScreen1 = () => {
                 {t("logo.name")}
               </span>
               {t("screens.index.screen1.subtitle")}
+              <span
+                style={{
+                  color: color["darker-grey"],
+                }}
+              >
+                {t("screens.index.screen1.emphasis")}
+              </span>
             </>
           }
           style={{

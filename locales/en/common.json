@@ -17,13 +17,31 @@
   "containers": {
     "walletButton": {
       "connect": "Connect Wallet"
+    },
+    "createCampaignForm": {
+      "title": "Create A New Campaign",
+      "fields": {
+        "name": {
+          "label": "Name",
+          "description": "Make an unique name for your campaign"
+        },
+        "minContribution": {
+          "label": "Minimum Contribution",
+          "description": "Set a minimum contribution required for people to join your campaign"
+        },
+        "description": {
+          "label": "Extra Description",
+          "description": "Add an extra description to you campaign, not required"
+        }
+      }
     }
   },
   "screens": {
     "index": {
       "screen1": {
         "title": "Discover, create, and participate on-chain campaigns",
-        "subtitle": " is where people exchange ideas, promises, and rewards in a fair matter."
+        "subtitle": " is where people exchange ideas, promises, and rewards",
+        "emphasis": " in a fair matter."
       },
       "screen2": {
         "title": "Explore all the Exciting Campaigns",

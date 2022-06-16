@@ -1,13 +1,14 @@
 import { WalletStatus } from "^@hooks/WalletStatus";
 import { useEffect, useState } from "react";
 import Web3 from "web3";
+import { windowInstalled } from "^@services/blockchain/types";
 
 export const useWalletStatus = (): WalletStatus => {
   const [walletStatus, setWalletStatus] = useState(WalletStatus.Unknown);
   useEffect(() => {
     async function getWalletStatus() {
       if ((window as any).ethereum) {
-        const web3 = new Web3((window as any).ethereum);
+        const web3 = new Web3((window as windowInstalled).ethereum);
         try {
           const accounts = await web3.eth.getAccounts();
           if (accounts && accounts.length > 0) {

@@ -4,8 +4,8 @@ import { useRouter } from "next/router";
 import React, { useCallback } from "react";
 import { routes } from "routes/routes";
 import { Icon, Menu } from "semantic-ui-react";
-import { Logo } from "^@components/common/Logo/Logo";
-import { WalletButton } from "^@containers/common/WalletButton/WalletButton";
+import { Logo } from "^@components/common";
+import { WalletButton } from "^@containers/common";
 import { color, font } from "^@styles/global";
 
 export const Header = () => {

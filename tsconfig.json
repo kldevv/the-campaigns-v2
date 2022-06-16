@@ -38,7 +38,9 @@
       "^@containers": ["./containers"],
       "^@containers/*": ["./containers/*"],
       "^@services": ["./services"],
-      "^@services/*": ["./services/*"]
+      "^@services/*": ["./services/*"],
+      "^@screens": ["./screens"],
+      "^@screens/*": ["./screens/*"]
     }
   },
   "target": "es5",

@@ -2,17 +2,48 @@
   "logo": {
     "name": "TheCampaign"
   },
-  "footer": {
-    "welcome": "Welcome to TheCampaign :)"
-  },
-  "header": {
-    "menuItems": {
-      "explore": "Explore",
-      "create": "Create",
-      "about": "About"
+  "layout": {
+    "footer": {
+      "welcome": "Welcome to TheCampaign :)"
+    },
+    "header": {
+      "menuItems": {
+        "explore": "Explore",
+        "create": "Create",
+        "about": "About"
+      }
     }
   },
-  "walletButton": {
-    "connect": "Connect Wallet"
+  "containers": {
+    "walletButton": {
+      "connect": "Connect Wallet"
+    }
+  },
+  "screens": {
+    "index": {
+      "screen1": {
+        "title": "Discover, create, and participate on-chain campaigns",
+        "subtitle": " is where people exchange ideas, promises, and rewards in a fair matter."
+      },
+      "screen2": {
+        "title": "Explore all the Exciting Campaigns",
+        "subtitle": "Find your ideal investing opportunities",
+        "button": "Explore"
+      },
+      "screen3": {
+        "title": "Understand: ",
+        "button": "Learn More",
+        "info": {
+          "initiator": {
+            "title": "Become an Initiator",
+            "description": "Initiate campaigns to support your inspiring ideas and distribute resources fairly"
+          },
+          "patron": {
+            "title": "Become a Patron",
+            "description": "Sponsor the most promising ideas funded under public reviews through Ethereum"
+          }
+        }
+      }
+    }
   }
 }

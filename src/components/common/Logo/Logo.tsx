@@ -1,6 +1,6 @@
 import useTranslation from "next-translate/useTranslation";
 import { Header, Icon } from "semantic-ui-react";
-import { color } from "^@styles/global";
+import { color, font } from "^@styles/global";
 
 export interface LogoProps {
   /**
@@ -29,6 +29,7 @@ export const Logo = ({ variant = "light", styles }: LogoProps) => {
       <Header.Content
         style={{
           color: variant === "dark" && color["black"],
+          fontFamily: font.poppins,
         }}
       >
         {t("logo.name")}

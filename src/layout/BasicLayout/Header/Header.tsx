@@ -4,8 +4,8 @@ import { useRouter } from "next/router";
 import React, { useCallback } from "react";
 import { routes } from "routes/routes";
 import { Icon, Menu } from "semantic-ui-react";
-import { Logo } from "^@components/Logo/Logo";
-import { WalletButton } from "^@containers/Layout/WalletButton/WalletButton";
+import { Logo } from "^@components/common/Logo/Logo";
+import { WalletButton } from "^@containers/common/WalletButton/WalletButton";
 import { color, font } from "^@styles/global";
 
 export const Header = () => {
@@ -105,15 +105,15 @@ export const Header = () => {
       ) : null} */}
       <Menu.Menu position="right">
         <CustomizedMenuItem
-          content={t("header.menuItems.explore")}
+          content={t("layout.header.menuItems.explore")}
           href={routes.common.explore}
         />
         <CustomizedMenuItem
-          content={t("header.menuItems.create")}
+          content={t("layout.header.menuItems.create")}
           href={routes.common.create}
         />
         <CustomizedMenuItem
-          content={t("header.menuItems.about")}
+          content={t("layout.header.menuItems.about")}
           href={routes.common.about}
         />
         <Menu.Item>

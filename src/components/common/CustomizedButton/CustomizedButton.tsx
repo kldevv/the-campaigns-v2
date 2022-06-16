@@ -1,6 +1,6 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { Button } from "semantic-ui-react";
-import { color } from "^@styles/global";
+import { color, font } from "^@styles/global";
 
 interface CustomizedButtonProps {
   /**
@@ -14,11 +14,11 @@ interface CustomizedButtonProps {
   /**
    * Content to show on the button
    */
-  content: string;
+  content: React.ReactNode;
   /**
    * Handler for the click events
    */
-  onClick: () => void;
+  onClick: (e: React.MouseEvent) => void;
   /**
    * Additional styles
    */
@@ -32,19 +32,18 @@ export const CustomizedButton = ({
   onClick,
   styles,
 }: CustomizedButtonProps) => {
-  const onClickHandler = useCallback(() => {
-    onClick();
-  }, []);
   return (
     <Button
       loading={loading}
       disabled={disabled}
       type="button"
       primary
-      onClick={onClickHandler}
+      onClick={onClick}
+      size="huge"
       style={{
         color: color.white,
         backgroundColor: color["dark-purple"],
+        fontFamily: font.poppins,
         ...styles,
       }}
     >

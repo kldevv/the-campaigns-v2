@@ -4,6 +4,7 @@ export enum color {
   "dark-purple" = "#7575F4",
   "light-purple" = "#C0C0F7",
   "dark-grey" = "rgb(95, 95, 95)",
+  "darker-grey" = "rgb(53, 56, 64)",
 }
 
 export enum font {

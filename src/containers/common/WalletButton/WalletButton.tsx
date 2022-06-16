@@ -1,6 +1,6 @@
 import useTranslation from "next-translate/useTranslation";
-import React, { useContext, useState } from "react";
-import { CustomizedButton } from "^@components/CustomizedButton/CustomizedButton";
+import React, { useCallback, useContext, useState } from "react";
+import { CustomizedButton } from "^@components/common/CustomizedButton/CustomizedButton";
 import { WalletStatusContext } from "^@contexts/WalletStatusContext";
 import { WalletStatus } from "^@hooks/WalletStatus";
 import { connectWallet } from "^@services/blockchain/connectWallet";
@@ -8,9 +8,8 @@ import { font } from "^@styles/global";
 
 export const WalletButton = () => {
   const walletStatus = useContext(WalletStatusContext);
-  if (walletStatus !== WalletStatus.InstalledNotConnected) {
-    return null;
-  }
+  const [loading, setLoading] = useState(false);
+  const { t } = useTranslation("common");
 
   const onConnectWallet = async () => {
     setLoading(true);
@@ -24,14 +23,20 @@ export const WalletButton = () => {
     }
   };
 
-  const [loading, setLoading] = useState(false);
-  const { t } = useTranslation("common");
+  const onClickHandler = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    onConnectWallet();
+  }, []);
+
+  if (walletStatus !== WalletStatus.InstalledNotConnected) {
+    return null;
+  }
 
   return (
     <CustomizedButton
       loading={loading}
-      content={t("walletButton.connect")}
-      onClick={onConnectWallet}
+      content={t("containers.walletButton.connect")}
+      onClick={onClickHandler}
       styles={{
         fontSize: "15px",
         fontWeight: "bold",

@@ -1,19 +1,13 @@
 import React from "react";
 import { Container, Divider, Header, Segment } from "semantic-ui-react";
-import { Logo } from "^@components/Logo/Logo";
+import { Logo } from "^@components/common/Logo/Logo";
 import { color, font } from "^@styles/global";
 import useTranslation from "next-translate/useTranslation";
 
 export const Footer = () => {
   const { t } = useTranslation("common");
   return (
-    <div
-      style={{
-        width: "100%",
-        position: "absolute",
-        bottom: "0",
-      }}
-    >
+    <>
       <Segment
         vertical
         style={{
@@ -24,7 +18,7 @@ export const Footer = () => {
         <Container text textAlign="center">
           <Header
             as="h2"
-            content={t("footer.welcome")}
+            content={t("layout.footer.welcome")}
             style={{
               fontFamily: font.poppins,
               fontWeight: "bold",
@@ -46,6 +40,6 @@ export const Footer = () => {
           </Container>
         </Container>
       </Segment>
-    </div>
+    </>
   );
 };

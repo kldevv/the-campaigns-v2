@@ -5,7 +5,7 @@ interface RequestArgs {
   params?: unknown[] | object;
 }
 
-export type windowInstalled = typeof window & {
+export type WindowInstalled = typeof window & {
   ethereum: provider & {
     request: (RequestArgs) => Promise<unknown>;
   };

@@ -41,8 +41,8 @@
       "^@services/*": ["./services/*"],
       "^@screens": ["./screens"],
       "^@screens/*": ["./screens/*"],
-      "^@Campaign": ["../build/Campaign.build.json"],
-      "^@CampaignManager": ["../build/CampaignManager.build.json"]
+      "^@Campaign": ["./contract/build/Campaign.build.json"],
+      "^@CampaignManager": ["./contract/build/CampaignManager.build.json"]
     }
   },
   "target": "es5",
@@ -54,7 +54,8 @@
   "include": [
     "**/*.ts",
     "next-env-.d.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "**/build/*.build.json"
     // ".storybook/**/*.ts",
     // ".storybook/**/*.tsx"
   ],

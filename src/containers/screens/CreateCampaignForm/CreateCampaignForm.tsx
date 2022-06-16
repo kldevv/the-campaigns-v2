@@ -1,9 +1,13 @@
+import useTranslation from "next-translate/useTranslation";
 import React, { useCallback, useState } from "react";
 import { Form, Header } from "semantic-ui-react";
 import { CustomizedFormField, CustomizedInput } from "^@components/common";
+import { CreateCampaignButton } from "^@containers/common";
+import { CreateCampaignFormMetaList } from "^@screens/create-campaign";
 import { color, font } from "^@styles/global";
 
 export type CreateCampaignFormFieldStruct = {
+  meta: CreateCampaignFormMetaList;
   label: string;
   description: string;
   required?: boolean;
@@ -25,33 +29,34 @@ export const CreateCampaignForm = ({
   title,
   fields,
 }: CreateCampaignFormProps) => {
+  const { t } = useTranslation("common");
   const [values, setValues] = useState({});
-  const handleFieldChange = useCallback((label: string, value: string) => {
-    setValues({ ...values, [label]: value });
-  }, []);
+  const handleFieldChange = useCallback(
+    (meta: CreateCampaignFormMetaList, value: string) => {
+      setValues({ ...values, [meta]: value });
+    },
+    [values]
+  );
 
-  const formFields = fields.map(({ label, description, required, type }) => {
-    return (
-      <CustomizedFormField
-        key={label}
-        label={label}
-        description={description}
-        required={required}
-        input={
-          <CustomizedInput
-            setValue={handleFieldChange}
-            value={values[label]}
-            label={label}
-            type={type}
-          />
-        }
-      />
-    );
-
-    // const onSubmit = useCallBack(()=> {
-
-    // }, [])
-  });
+  const formFields = fields.map(
+    ({ label, description, required, type, meta }) => {
+      return (
+        <CustomizedFormField
+          key={label}
+          label={label}
+          description={description}
+          required={required}
+          input={
+            <CustomizedInput
+              setParentValue={handleFieldChange}
+              meta={meta}
+              type={type}
+            />
+          }
+        />
+      );
+    }
+  );
 
   return (
     <>
@@ -67,7 +72,22 @@ export const CreateCampaignForm = ({
           marginBottom: "1em",
         }}
       />
-      <Form>{formFields}</Form>
+      <Form>
+        <Form.Field required>
+          <label
+            style={{
+              fontSize: "13px",
+              color: color["dark-grey"],
+              fontWeight: "normal",
+              fontFamily: font.poppins,
+            }}
+          >
+            {t("containers.createCampaignForm.require")}
+          </label>
+        </Form.Field>
+        {formFields}
+        <CreateCampaignButton payload={values} />
+      </Form>
     </>
   );
 };

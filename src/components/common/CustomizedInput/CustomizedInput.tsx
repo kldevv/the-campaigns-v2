@@ -1,32 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { CreateCampaignFormMetaList } from "^@screens/create-campaign";
 
 export interface CustomizedInputProps {
   /**
-   * Current value for input
-   */
-  value: string;
-  /**
    * Action to take when input changes
    */
-  setValue: (label: string, value: string) => void;
-  /**
-   * Unique label the input belongs to
-   */
-  label: string;
+  setParentValue: (meta: CreateCampaignFormMetaList, value: string) => void;
   /**
    * Input type
    */
   type: "text" | "number";
+  /**
+   * Id to set the parent values
+   */
+  meta: CreateCampaignFormMetaList;
 }
 
 export const CustomizedInput = ({
-  value,
-  setValue,
-  label,
+  setParentValue,
   type,
+  meta,
 }: CustomizedInputProps) => {
+  const [value, setValue] = useState("");
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(label, event.target.value);
+    event.preventDefault();
+    const value = event.target.value;
+    setParentValue(meta, value);
+    setValue(value);
   };
 
   return <input onChange={handleChange} value={value} type={type} />;

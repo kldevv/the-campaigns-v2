@@ -6,16 +6,24 @@ import {
   CreateCampaignFormFieldStruct,
 } from "^@containers/screens";
 
+export enum CreateCampaignFormMetaList {
+  Name,
+  MinContribution,
+  Description,
+}
+
 export const CreateCampaignScene1 = () => {
   const { t } = useTranslation("common");
   const fieldData: CreateCampaignFormFieldStruct[] = [
     {
+      meta: CreateCampaignFormMetaList.Name,
       label: t("containers.createCampaignForm.fields.name.label"),
       description: t("containers.createCampaignForm.fields.name.description"),
       required: true,
       type: "text",
     },
     {
+      meta: CreateCampaignFormMetaList.MinContribution,
       label: t("containers.createCampaignForm.fields.minContribution.label"),
       description: t(
         "containers.createCampaignForm.fields.minContribution.description"
@@ -24,6 +32,7 @@ export const CreateCampaignScene1 = () => {
       type: "number",
     },
     {
+      meta: CreateCampaignFormMetaList.Description,
       label: t("containers.createCampaignForm.fields.description.label"),
       description: t(
         "containers.createCampaignForm.fields.description.description"

@@ -18,8 +18,12 @@
     "walletButton": {
       "connect": "Connect Wallet"
     },
+    "createButton": {
+      "create": "Create"
+    },
     "createCampaignForm": {
       "title": "Create A New Campaign",
+      "require": " Required fields",
       "fields": {
         "name": {
           "label": "Name",

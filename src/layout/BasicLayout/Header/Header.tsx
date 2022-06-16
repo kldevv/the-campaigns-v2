@@ -61,7 +61,6 @@ export const Header = () => {
       size="huge"
       tabular
       fixed="top"
-      stackable
       style={{
         borderRadius: "0px",
         backgroundColor: color.white,
@@ -117,7 +116,9 @@ export const Header = () => {
           href={routes.common.about}
         />
         <Menu.Item>
-          <WalletButton />
+          <span>
+            <WalletButton size="small" />
+          </span>
         </Menu.Item>
         <Menu.Item>
           <a

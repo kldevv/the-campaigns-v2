@@ -20,9 +20,9 @@ interface CustomizedButtonProps {
    */
   onClick: (e: React.MouseEvent) => void;
   /**
-   * Additional styles
+   * Button Size
    */
-  styles?: {};
+  size?: "medium" | "huge" | "small";
 }
 
 export const CustomizedButton = ({
@@ -30,7 +30,7 @@ export const CustomizedButton = ({
   disabled = false,
   content,
   onClick,
-  styles,
+  size = "huge",
 }: CustomizedButtonProps) => {
   return (
     <Button
@@ -39,12 +39,12 @@ export const CustomizedButton = ({
       type="button"
       primary
       onClick={onClick}
-      size="huge"
+      size={size}
       style={{
         color: color.white,
         backgroundColor: color["dark-purple"],
         fontFamily: font.poppins,
-        ...styles,
+        fontWeight: "bold",
       }}
     >
       {content}

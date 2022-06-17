@@ -14,6 +14,9 @@
       }
     }
   },
+  "addons": {
+    "walletNotConnected": "Wallet is not connected. An Ethereum wallet is required to use TheCampaign."
+  },
   "containers": {
     "walletButton": {
       "connect": "Connect Wallet"

@@ -1,8 +1,10 @@
 import useTranslation from "next-translate/useTranslation";
-import React, { useCallback, useState } from "react";
-import { Form, Header } from "semantic-ui-react";
+import React, { useCallback, useContext, useState } from "react";
+import { Form, Header, Message } from "semantic-ui-react";
 import { CustomizedFormField, CustomizedInput } from "^@components/common";
 import { CreateCampaignButton } from "^@containers/common";
+import { WalletStatusContext } from "^@contexts/WalletStatusContext";
+import { WalletStatus } from "^@hooks/WalletStatus";
 import { CreateCampaignFormMetaList } from "^@screens/create-campaign";
 import { color, font } from "^@styles/global";
 
@@ -30,6 +32,7 @@ export const CreateCampaignForm = ({
   fields,
 }: CreateCampaignFormProps) => {
   const { t } = useTranslation("common");
+  const walletStatus = useContext(WalletStatusContext);
   const [values, setValues] = useState({});
   const handleFieldChange = useCallback(
     (meta: CreateCampaignFormMetaList, value: string) => {
@@ -87,6 +90,9 @@ export const CreateCampaignForm = ({
         </Form.Field>
         {formFields}
         <CreateCampaignButton payload={values} />
+        {walletStatus !== WalletStatus.InstalledAndConnected && (
+          <Message info content={t("addons.walletNotConnected")} />
+        )}
       </Form>
     </>
   );

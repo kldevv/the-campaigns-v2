@@ -44,7 +44,7 @@ export const IndexScreen2 = () => {
           }}
         />
         <CustomizedButton
-          styles={{
+          style={{
             backgroundColor: color.white,
             color: color["dark-purple"],
           }}

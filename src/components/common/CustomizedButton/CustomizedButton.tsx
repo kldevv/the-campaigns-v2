@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 import { color, font } from "^@styles/global";
+import CSS from "csstype";
 
 interface CustomizedButtonProps {
   /**
@@ -23,6 +24,10 @@ interface CustomizedButtonProps {
    * Button Size
    */
   size?: "medium" | "huge" | "small";
+  /**
+   * Additional Style
+   */
+  style?: CSS.Properties;
 }
 
 export const CustomizedButton = ({
@@ -31,6 +36,7 @@ export const CustomizedButton = ({
   content,
   onClick,
   size = "huge",
+  style,
 }: CustomizedButtonProps) => {
   return (
     <Button
@@ -45,6 +51,7 @@ export const CustomizedButton = ({
         backgroundColor: color["dark-purple"],
         fontFamily: font.poppins,
         fontWeight: "bold",
+        ...style,
       }}
     >
       {content}

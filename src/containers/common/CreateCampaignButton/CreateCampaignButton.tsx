@@ -1,8 +1,9 @@
 import useTranslation from "next-translate/useTranslation";
 import React, { useCallback, useContext, useState } from "react";
 import { CustomizedButton } from "^@components/common";
+import { NetworkIDContext } from "^@contexts/NetworkIDContext";
 import { WalletStatusContext } from "^@contexts/WalletStatusContext";
-import { ChainID } from "^@hooks/ChainID";
+import { NetworkID } from "^@hooks/NetworkID";
 import { WalletStatus } from "^@hooks/WalletStatus";
 import { CreateCampaignFormMetaList } from "^@screens/create-campaign";
 import { createCampaign } from "^@services/blockchain/createCampaign";
@@ -23,22 +24,24 @@ export const CreateCampaignButton = ({
   payload,
 }: CreateCampaignButtonProps) => {
   const walletStatus = useContext(WalletStatusContext);
+  const networkID = useContext(NetworkIDContext);
   const [loading, setLoading] = useState(false);
   const { t } = useTranslation("common");
 
   const clickToCreate = async () => {
     setLoading(true);
     try {
-      await createCampaign(ChainID.Rinkeby, {
-        name: payload[CreateCampaignFormMetaList.Name],
-        minContribution: payload[CreateCampaignFormMetaList.MinContribution],
-        description: payload[CreateCampaignFormMetaList.Description],
+      await createCampaign(networkID, {
+        name: payload[CreateCampaignFormMetaList.Name] ?? "Unnamed",
+        minContribution:
+          payload[CreateCampaignFormMetaList.MinContribution] ?? 0,
+        description: payload[CreateCampaignFormMetaList.Description] ?? "",
       });
     } catch (err) {
       console.log(err);
     }
     setLoading(false);
-    window.location.reload();
+    // window.location.reload();
   };
 
   const onClickHandler = useCallback(
@@ -46,7 +49,7 @@ export const CreateCampaignButton = ({
       e.preventDefault();
       clickToCreate();
     },
-    [clickToCreate, payload]
+    [payload, networkID]
   );
 
   return (

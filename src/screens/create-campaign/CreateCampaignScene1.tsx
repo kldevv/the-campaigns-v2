@@ -37,7 +37,6 @@ export const CreateCampaignScene1 = () => {
       description: t(
         "containers.createCampaignForm.fields.description.description"
       ),
-      required: true,
       type: "text",
     },
   ];

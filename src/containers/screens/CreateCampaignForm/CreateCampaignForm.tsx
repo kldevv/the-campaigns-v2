@@ -75,7 +75,7 @@ export const CreateCampaignForm = ({
           marginBottom: "1em",
         }}
       />
-      <Form>
+      <Form onSubmit={console.log}>
         <Form.Field required>
           <label
             style={{

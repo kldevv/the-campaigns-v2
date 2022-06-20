@@ -1,6 +1,6 @@
 import useTranslation from "next-translate/useTranslation";
 import React, { useCallback, useContext, useState } from "react";
-import { CustomizedButton } from "^@components/common";
+import { CustomizedButton, WalletNotConnectedInfo } from "^@components/common";
 import { WalletStatusContext } from "^@contexts/WalletStatusContext";
 import { WalletStatus } from "^@hooks/WalletStatus";
 import { connectWallet } from "^@services/blockchain/connectWallet";
@@ -37,11 +37,13 @@ export const WalletButton = ({ size = "huge" }: WalletButtonProps) => {
   }
 
   return (
-    <CustomizedButton
-      loading={loading}
-      content={t("containers.walletButton.connect")}
-      onClick={onClickHandler}
-      size={size}
-    />
+    <>
+      <CustomizedButton
+        loading={loading}
+        content={t("containers.walletButton.connect")}
+        onClick={onClickHandler}
+        size={size}
+      />
+    </>
   );
 };

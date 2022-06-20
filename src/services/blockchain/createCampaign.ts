@@ -34,16 +34,16 @@ export const createCampaign = async (
 
     const manager = new web3.eth.Contract(abi as any, address);
 
-    console.log("Deploying new campaign (contract)...");
+    console.log("Creating a new campaign...");
     console.log(
       `Detail: 
-      * NetworkID: ${networkID} 
-      * Address: ${address}
-      * Values: ${JSON.stringify({
-        name,
-        minContribution,
-        description,
-      })}`
+* Network: ${NetworkID[networkID]} 
+* Address: ${address}
+* Values:
+  ** Name: ${name}
+  ** Minimum Contribution: ${minContribution}
+  ** Description: ${description}
+      `
     );
 
     const result = await manager.methods
@@ -62,6 +62,6 @@ export const createCampaign = async (
     return result;
   } catch (err) {
     console.log("Failed.");
-    console.log(err);
+    throw err;
   }
 };

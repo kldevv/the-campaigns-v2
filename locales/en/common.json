@@ -15,7 +15,13 @@
     }
   },
   "addons": {
-    "walletNotConnected": "Wallet is not connected. An Ethereum wallet is required to use TheCampaign."
+    "walletNotConnected": {
+      "title": "Wallet is Not Connected",
+      "message": "An Ethereum wallet is required to use TheCampaign. Please check your wallet status."
+    },
+    "error": {
+      "general": "Sorry, something went wrong"
+    }
   },
   "containers": {
     "walletButton": {
@@ -40,6 +46,10 @@
           "label": "Extra Description",
           "description": "Add an extra description to you campaign, not required"
         }
+      },
+      "success": {
+        "title": "You're all set",
+        "message": "Your campaign is successfully deployed. Please refresh the page to create a second campaign or go to Explore page to see the newly deployed campaigns."
       }
     }
   },

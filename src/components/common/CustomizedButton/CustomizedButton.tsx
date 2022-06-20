@@ -19,11 +19,15 @@ interface CustomizedButtonProps {
   /**
    * Handler for the click events
    */
-  onClick: (e: React.MouseEvent) => void;
+  onClick?: (e: React.MouseEvent) => void;
   /**
    * Button Size
    */
   size?: "medium" | "huge" | "small";
+  /**
+   * Button type
+   */
+  type?: "submit" | "button";
   /**
    * Additional Style
    */
@@ -36,13 +40,14 @@ export const CustomizedButton = ({
   content,
   onClick,
   size = "huge",
+  type = "button",
   style,
 }: CustomizedButtonProps) => {
   return (
     <Button
       loading={loading}
       disabled={disabled}
-      type="button"
+      type={type}
       primary
       onClick={onClick}
       size={size}

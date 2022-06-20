@@ -43,10 +43,7 @@ export const CreateCampaignScene1 = () => {
   return (
     <Segment vertical style={{ minHeight: "800px" }}>
       <Container text textAlign="left">
-        <CreateCampaignForm
-          title={t("containers.createCampaignForm.title")}
-          fields={fieldData}
-        />
+        <CreateCampaignForm fields={fieldData} />
       </Container>
     </Segment>
   );

@@ -4,10 +4,8 @@ import { useWalletStatus } from "^@hooks/blockchain/useWalletStatus";
 
 export const WalletStatusProvider = ({ children }) => {
   return (
-    <>
-      <WalletStatusContext.Provider value={useWalletStatus()}>
-        {children}
-      </WalletStatusContext.Provider>
-    </>
+    <WalletStatusContext.Provider value={useWalletStatus()}>
+      {children}
+    </WalletStatusContext.Provider>
   );
 };

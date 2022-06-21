@@ -1,7 +1,7 @@
 import useTranslation from "next-translate/useTranslation";
 import React, { useCallback, useContext, useState } from "react";
 import { NetworkIDContext } from "^@contexts/NetworkIDContext";
-import { Form, Header } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 import {
   CustomizedFormField,
   CustomizedInput,
@@ -96,19 +96,6 @@ export const CreateCampaignForm = ({ fields }: CreateCampaignFormProps) => {
 
   return (
     <>
-      <Header
-        as="h1"
-        textAlign="center"
-        content={t("containers.createCampaignForm.title")}
-        style={{
-          color: color.black,
-          fontFamily: font.poppins,
-          fontWeight: "bolder",
-          fontSize: "3em",
-          marginTop: "2em",
-          marginBottom: "1em",
-        }}
-      />
       {error ? (
         <ErrorInfo message={error} />
       ) : success ? (

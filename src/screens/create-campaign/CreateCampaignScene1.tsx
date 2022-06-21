@@ -1,6 +1,7 @@
 import useTranslation from "next-translate/useTranslation";
 import React from "react";
 import { Container, Segment } from "semantic-ui-react";
+import { CustomizedSceneHeader } from "^@components/common";
 import {
   CreateCampaignForm,
   CreateCampaignFormFieldStruct,
@@ -41,8 +42,12 @@ export const CreateCampaignScene1 = () => {
     },
   ];
   return (
-    <Segment vertical style={{ minHeight: "800px" }}>
+    <Segment
+      vertical
+      style={{ minHeight: "800px", padding: "5em 0em 5em 0em" }}
+    >
       <Container text textAlign="left">
+        <CustomizedSceneHeader title={t("screens.createCampaign.title")} />
         <CreateCampaignForm fields={fieldData} />
       </Container>
     </Segment>

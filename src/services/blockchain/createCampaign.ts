@@ -30,8 +30,8 @@ export const createCampaign = async (
   try {
     const web3 = new Web3((window as WindowInstalled).ethereum);
     const accounts = await web3.eth.getAccounts();
-    const address = CampaignManagerAddresses[NetworkID.Rinkeby];
 
+    const address = CampaignManagerAddresses[networkID];
     const manager = new web3.eth.Contract(abi as any, address);
 
     console.log("Creating a new campaign...");

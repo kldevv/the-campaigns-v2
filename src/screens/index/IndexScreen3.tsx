@@ -73,7 +73,7 @@ export const IndexScreen3 = () => {
         <CustomizedButton
           content={t("screens.index.screen3.button")}
           loading={false}
-          styles={{
+          style={{
             fontFamily: font.poppins,
             backgroundColor: color["dark-purple"],
             color: "white",

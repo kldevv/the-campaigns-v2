@@ -1,4 +1,4 @@
-export interface CampaignInfo {
+export type CampaignInfo = {
   address: string;
   owner: string;
   name: string;
@@ -10,4 +10,5 @@ export interface CampaignInfo {
   patronCount: number;
   activeRequestCount: number;
   requestCount: number;
-}
+  isPatron: boolean;
+};

@@ -11,36 +11,45 @@ export const useCampaignInfoes = (networkID: NetworkID) => {
   const [CampaignInfoes, setCampaignInfoes] = useState([]);
 
   const getCampaignInfoes = async () => {
-    if (networkID === NetworkID.Unknown) {
-      return;
-    }
-    if ((window as any).ethereum) {
+    if ((window as any).ethereum && networkID !== NetworkID.Unknown) {
       const web3 = new Web3((window as WindowInstalled).ethereum);
-      const getCampaignInfo = async (campaignAddress: string) => {
-        const campaign = await new web3.eth.Contract(
-          CampaignAbi as any,
-          campaignAddress
-        );
-        const campaignVarSummary = await campaign.methods
-          .getVarSummary()
-          .call();
-        const campaignInfo = {
-          address: campaignVarSummary["0"],
-          owner: campaignVarSummary["1"],
-          name: campaignVarSummary["2"],
-          description: campaignVarSummary["3"],
-          minContribution: campaignVarSummary["4"],
-          isLocked: campaignVarSummary["5"],
-          activeBalance: campaignVarSummary["6"],
-          totalBalance: campaignVarSummary["7"],
-          patronCount: campaignVarSummary["8"],
-          activeRequestCount: campaignVarSummary["9"],
-          requestCount: campaignVarSummary["10"],
-        } as CampaignInfo;
-        return campaignInfo;
-      };
-
       try {
+        const accounts = await web3.eth.getAccounts();
+
+        const getCampaignInfo = async (campaignAddress: string) => {
+          try {
+            const campaign = await new web3.eth.Contract(
+              CampaignAbi as any,
+              campaignAddress
+            );
+
+            const isPatron = await campaign.methods
+              .isPatron(accounts[0])
+              .call();
+
+            const campaignVarSummary = await campaign.methods
+              .getVarSummary()
+              .call();
+
+            const campaignInfo = {
+              address: campaignVarSummary["0"],
+              owner: campaignVarSummary["1"],
+              name: campaignVarSummary["2"],
+              description: campaignVarSummary["3"],
+              minContribution: campaignVarSummary["4"],
+              isLocked: campaignVarSummary["5"],
+              activeBalance: campaignVarSummary["6"],
+              totalBalance: campaignVarSummary["7"],
+              patronCount: campaignVarSummary["8"],
+              activeRequestCount: campaignVarSummary["9"],
+              requestCount: campaignVarSummary["10"],
+              isPatron,
+            } as CampaignInfo;
+            return campaignInfo;
+          } catch (err) {
+            console.log(err);
+          }
+        };
         const address = CampaignManagerAddresses[networkID];
         const manager = new web3.eth.Contract(ManagerAbi as any, address);
 
@@ -56,7 +65,9 @@ export const useCampaignInfoes = (networkID: NetworkID) => {
   };
 
   useEffect(() => {
-    getCampaignInfoes();
+    if (networkID !== NetworkID.Unknown) {
+      getCampaignInfoes();
+    }
   }, [networkID]);
   return CampaignInfoes;
 };

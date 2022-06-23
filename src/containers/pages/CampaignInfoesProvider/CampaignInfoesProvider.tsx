@@ -1,5 +1,5 @@
 import React from "react";
-import { CampaignInfoesContext } from "^@contexts/CampaignInfoesContext";
+import { CampaignInfoesContext } from "^@contexts";
 import { useCampaignInfoes } from "^@hooks/blockchain/useCampaignInfoes";
 import { NetworkID } from "^@hooks/NetworkID";
 

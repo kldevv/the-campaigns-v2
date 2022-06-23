@@ -1,5 +1,5 @@
 import React from "react";
-import { WalletStatusContext } from "^@contexts/WalletStatusContext";
+import { WalletStatusContext } from "^@contexts";
 import { useWalletStatus } from "^@hooks/blockchain/useWalletStatus";
 
 export const WalletStatusProvider = ({ children }) => {

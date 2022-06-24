@@ -5,7 +5,7 @@ import { CampaignInfoDetailContext } from "^@contexts";
 import { color } from "^@styles/global";
 
 export const CampaignProfileImage = () => {
-  const campaignInfoDetail = useContext(CampaignInfoDetailContext);
+  const { campaignInfo } = useContext(CampaignInfoDetailContext);
   return (
     <Icon.Group>
       <Icon
@@ -18,14 +18,15 @@ export const CampaignProfileImage = () => {
           marginTop: "-1em",
         }}
       />
-      <LockingIndicator
-        style={{
-          marginLeft: "8em",
-          marginTop: "5em",
-        }}
-        locked={campaignInfoDetail?.campaignInfo?.isLocked}
-        loading={!campaignInfoDetail?.campaignInfo}
-      />
+      {campaignInfo && (
+        <LockingIndicator
+          style={{
+            marginLeft: "8em",
+            marginTop: "5em",
+          }}
+          locked={campaignInfo?.isLocked}
+        />
+      )}
     </Icon.Group>
   );
 };

@@ -1,6 +1,9 @@
 import React from "react";
 import { Container, Segment } from "semantic-ui-react";
-import { CampaignProfileImage } from "^@containers/screens";
+import {
+  CampaignProfileDetail,
+  CampaignProfileImage,
+} from "^@containers/screens";
 import { color } from "^@styles/global";
 
 export const CampaignDetailScene = () => {
@@ -17,6 +20,7 @@ export const CampaignDetailScene = () => {
       />
       <Container text textAlign="center">
         <CampaignProfileImage />
+        <CampaignProfileDetail />
       </Container>
     </Segment>
   );

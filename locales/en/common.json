@@ -57,6 +57,10 @@
     },
     "campaignBulletin": {
       "patrons": " {{count}} Patrons"
+    },
+    "campaignProfileDetail": {
+      "at": "At ",
+      "createdBy": "Created by "
     }
   },
   "screens": {

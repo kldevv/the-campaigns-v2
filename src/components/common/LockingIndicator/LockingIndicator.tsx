@@ -10,20 +10,12 @@ export interface LockingIndicatorProps {
    */
   locked: boolean;
   /**
-   * Is waiting for content
-   */
-  loading?: boolean;
-  /**
    * Additional styling
    */
   style?: CSS.Properties;
 }
 
-export const LockingIndicator = ({
-  locked,
-  loading = false,
-  style,
-}: LockingIndicatorProps) => {
+export const LockingIndicator = ({ locked, style }: LockingIndicatorProps) => {
   const { t } = useTranslation("common");
 
   return (
@@ -33,18 +25,16 @@ export const LockingIndicator = ({
       }}
       content={locked ? t("addons.campaign.locked") : t("addons.campaign.open")}
       trigger={
-        !loading && (
-          <Icon
-            circular
-            name={locked ? "lock" : "check"}
-            size="small"
-            style={{
-              color: locked ? color.white : color["darker-grey"],
-              backgroundColor: locked ? color["darker-grey"] : color.white,
-              ...style,
-            }}
-          />
-        )
+        <Icon
+          circular
+          name={locked ? "lock" : "check"}
+          size="small"
+          style={{
+            color: locked ? color.white : color["darker-grey"],
+            backgroundColor: locked ? color["darker-grey"] : color.white,
+            ...style,
+          }}
+        />
       }
     />
   );

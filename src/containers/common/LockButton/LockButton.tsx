@@ -6,7 +6,7 @@ import { AccountContext, CampaignInfoDetailContext } from "^@contexts";
 import { lockCampaign } from "^@services/blockchain/lockCampaign";
 import { color } from "^@styles/global";
 
-export const LockUnlockButton = () => {
+export const LockButton = () => {
   const account = useContext(AccountContext);
   const { campaignInfo } = useContext(CampaignInfoDetailContext);
   const { t } = useTranslation("common");
@@ -32,20 +32,22 @@ export const LockUnlockButton = () => {
     return null;
   }
 
-  const { isLocked, patronCount } = campaignInfo;
+  const { patronCount } = campaignInfo;
 
   return (
     <CustomizedButton
       content={
         <span>
-          <Icon name={isLocked ? "unlock" : "lock"} />
-          {isLocked
-            ? t("containers.lockUnlockButton.unlock")
-            : t("containers.lockUnlockButton.lock")}
+          <Icon name="lock" />
+          {t("containers.lockButton")}
         </span>
       }
       size="medium"
-      disabled={account !== campaignInfo.owner || patronCount < 1}
+      disabled={
+        account !== campaignInfo.owner ||
+        patronCount < 1 ||
+        campaignInfo.isLocked
+      }
       loading={loading}
       onClick={onClickLock}
       style={{

@@ -48,8 +48,8 @@ export const CustomizedButton = ({
       loading={loading}
       disabled={disabled}
       type={type}
+      onClick={onClick ?? null}
       primary
-      onClick={onClick}
       size={size}
       style={{
         color: color.white,

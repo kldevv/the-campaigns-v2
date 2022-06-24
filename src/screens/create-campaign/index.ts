@@ -1,1 +1,1 @@
-export * from "./CreateCampaignScene1";
+export * from "./CreateCampaignScreen1";

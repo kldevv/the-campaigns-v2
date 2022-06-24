@@ -3,7 +3,7 @@ export type CampaignInfo = {
   owner: string;
   name: string;
   description: string;
-  minContribution: string;
+  minContribution: number;
   isLocked: boolean;
   activeBalance: number;
   totalBalance: number;

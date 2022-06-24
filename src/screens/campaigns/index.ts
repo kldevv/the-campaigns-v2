@@ -1,2 +1,2 @@
-export * from "./CampaignScene1";
-export * from "./CampaignDetailScene1";
+export * from "./CampaignScreen1";
+export * from "./CampaignDetailScreen1";

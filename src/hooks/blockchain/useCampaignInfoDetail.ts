@@ -72,7 +72,7 @@ export const useCampaignInfoDetail = ({
           /**
            * Requests
            */
-          const requestInfoes = [] as RequestInfo[];
+          const requestInfoes: RequestInfo[] = [];
           for (let id = 0; id < campaignInfo.requestCount; ++id) {
             try {
               const request = await campaign.methods.requests(id).call();

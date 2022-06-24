@@ -13,7 +13,7 @@ export enum CreateCampaignFormMetaList {
   Description,
 }
 
-export const CreateCampaignScene1 = () => {
+export const CreateCampaignScreen1 = () => {
   const { t } = useTranslation("common");
   const fieldData: CreateCampaignFormFieldStruct[] = [
     {

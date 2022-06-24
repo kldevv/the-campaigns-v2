@@ -3,10 +3,11 @@ import { Container, Segment } from "semantic-ui-react";
 import {
   CampaignProfileDetail,
   CampaignProfileImage,
+  CampaignProfileStatus,
 } from "^@containers/screens";
 import { color } from "^@styles/global";
 
-export const CampaignDetailScene = () => {
+export const CampaignDetailScreen1 = () => {
   return (
     <Segment vertical style={{ minHeight: "800px" }}>
       <Segment
@@ -21,6 +22,7 @@ export const CampaignDetailScene = () => {
       <Container text textAlign="center">
         <CampaignProfileImage />
         <CampaignProfileDetail />
+        <CampaignProfileStatus />
       </Container>
     </Segment>
   );

@@ -4,7 +4,7 @@ import { Container, Segment } from "semantic-ui-react";
 import { CustomizedSceneHeader } from "^@components/common";
 import { CampaingInfoBulletin } from "^@containers/screens";
 
-export const CampaignScene1 = () => {
+export const CampaignScreen1 = () => {
   const { t } = useTranslation("common");
   return (
     <Segment vertical style={{ minHeight: 700, padding: "5em 0em 5em 0em" }}>

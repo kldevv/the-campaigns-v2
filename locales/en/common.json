@@ -61,6 +61,12 @@
     "campaignProfileDetail": {
       "at": "At ",
       "createdBy": "Created by "
+    },
+    "campaignProfileStatus": {
+      "patrons": "Patrons",
+      "totalBalance": "Total Balance",
+      "activeBalance": "Active Balance",
+      "minContribution": "Minimum Contribution"
     }
   },
   "screens": {

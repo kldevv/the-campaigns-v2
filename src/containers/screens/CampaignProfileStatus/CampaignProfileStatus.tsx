@@ -1,7 +1,8 @@
 import useTranslation from "next-translate/useTranslation";
 import React, { useContext } from "react";
-import { Menu, SemanticWIDTHS } from "semantic-ui-react";
+import { Button, Menu, SemanticWIDTHS } from "semantic-ui-react";
 import { CampaignStatus, CampaignStatusProps } from "^@components/containers";
+import { ContributeButton, LockUnlockButton } from "^@containers/common";
 import { CampaignInfoDetailContext } from "^@contexts";
 import { color } from "^@styles/global";
 
@@ -38,12 +39,20 @@ export const CampaignProfileStatus = () => {
     }
   );
   return (
-    <Menu
-      compact
-      widths={Math.min(16, campaingStatuses.length) as SemanticWIDTHS}
-      style={{ maxWidth: "40em", color: color.white }}
-    >
-      {campaingStatuses}
-    </Menu>
+    <>
+      <Menu
+        compact
+        widths={Math.min(16, campaingStatuses.length) as SemanticWIDTHS}
+        style={{ maxWidth: "40em", color: color.white }}
+      >
+        {campaingStatuses}
+      </Menu>
+      <div style={{ margin: "2em" }}>
+        <Button.Group>
+          <ContributeButton />
+          <LockUnlockButton />
+        </Button.Group>
+      </div>
+    </>
   );
 };

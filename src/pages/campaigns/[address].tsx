@@ -3,7 +3,10 @@ import React, { useContext } from "react";
 import { BasicScreenContainer } from "^@components/screen";
 import { CampaignInfoDetailProvider } from "^@containers/pages/CampaignInfoDetailProvider/CampaignInfoDetailProvider";
 import { WalletStatusContext } from "^@contexts";
-import { CampaignDetailScreen1 } from "^@screens/campaigns";
+import {
+  CampaignDetailScreen1,
+  CampaignDetailScreen2,
+} from "^@screens/campaigns";
 
 const CampaignDetail = () => {
   const router = useRouter();
@@ -19,6 +22,7 @@ const CampaignDetail = () => {
     <CampaignInfoDetailProvider address={address} walletStatus={walletStatus}>
       <BasicScreenContainer>
         <CampaignDetailScreen1 />
+        <CampaignDetailScreen2 />
       </BasicScreenContainer>
     </CampaignInfoDetailProvider>
   );

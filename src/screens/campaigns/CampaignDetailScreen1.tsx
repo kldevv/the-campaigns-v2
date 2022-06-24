@@ -9,9 +9,8 @@ import { color } from "^@styles/global";
 
 export const CampaignDetailScreen1 = () => {
   return (
-    <Segment vertical style={{ minHeight: "800px" }}>
-      <Segment
-        vertical
+    <div style={{ minHeight: "600px" }}>
+      <div
         style={{
           minHeight: 200,
           maxHeight: 200,
@@ -24,6 +23,6 @@ export const CampaignDetailScreen1 = () => {
         <CampaignProfileDetail />
         <CampaignProfileStatus />
       </Container>
-    </Segment>
+    </div>
   );
 };

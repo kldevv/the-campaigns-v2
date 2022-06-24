@@ -34,8 +34,8 @@
     "createButton": {
       "create": "Create"
     },
-    "lockButton": "lock",
-    "unlockButton": "unlock",
+    "lockButton": "Lock",
+    "unlockButton": "Unlock",
     "createCampaignForm": {
       "require": " Required fields",
       "fields": {

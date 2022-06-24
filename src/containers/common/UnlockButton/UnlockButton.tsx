@@ -3,19 +3,19 @@ import React, { useCallback, useContext, useState } from "react";
 import { Icon } from "semantic-ui-react";
 import { CustomizedButton } from "^@components/common";
 import { AccountContext, CampaignInfoDetailContext } from "^@contexts";
-import { lockCampaign } from "^@services/blockchain/lockCampaign";
+import { unlockCampaign } from "^@services/blockchain/unlockCampaign";
 import { color } from "^@styles/global";
 
-export const LockButton = () => {
+export const UnlockButton = () => {
   const account = useContext(AccountContext);
   const { campaignInfo } = useContext(CampaignInfoDetailContext);
   const { t } = useTranslation("common");
   const [loading, setLoading] = useState(false);
 
-  const onLock = async () => {
+  const onUnlock = async () => {
     setLoading(true);
     try {
-      await lockCampaign(campaignInfo?.address);
+      await unlockCampaign(campaignInfo?.address);
       window.location.reload();
     } catch (err) {
       console.log(err);
@@ -24,8 +24,8 @@ export const LockButton = () => {
     }
   };
 
-  const onClickLock = useCallback(() => {
-    onLock();
+  const onClickUnlock = useCallback(() => {
+    onUnlock();
   }, [campaignInfo]);
 
   if (!account || !campaignInfo) {
@@ -36,18 +36,18 @@ export const LockButton = () => {
     <CustomizedButton
       content={
         <span>
-          <Icon name="lock" />
-          {t("containers.lockButton")}
+          <Icon name="unlock" />
+          {t("containers.unlockButton")}
         </span>
       }
       size="medium"
       disabled={
         account !== campaignInfo.owner ||
-        campaignInfo.patronCount < 1 ||
-        campaignInfo.isLocked
+        campaignInfo.activeRequestCount > 0 ||
+        !campaignInfo.isLocked
       }
       loading={loading}
-      onClick={onClickLock}
+      onClick={onClickUnlock}
       style={{
         color: color["dark-grey"],
         backgroundColor: color.white,

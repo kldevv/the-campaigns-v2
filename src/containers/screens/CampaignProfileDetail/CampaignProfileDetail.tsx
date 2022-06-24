@@ -14,7 +14,7 @@ export const CampaignProfileDetail = () => {
   if (!campaignInfo) {
     return null;
   }
-  const { name, address, owner } = campaignInfo || {};
+  const { name, address, owner, description } = campaignInfo;
   const getEtherscanURL = (address: string): string => {
     return routes.external.etherscan
       .replace("v1", NetworkID[networkID])
@@ -68,6 +68,7 @@ export const CampaignProfileDetail = () => {
             </a>
           </>
         )}
+        <div style={{ color: color["darker-grey"] }}>{description}</div>
       </div>
     </Header>
   );

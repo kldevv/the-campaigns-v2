@@ -34,6 +34,17 @@
     "createButton": {
       "create": "Create"
     },
+    "contributeModal": {
+      "button": "contribute",
+      "header": "Contribution to {{name}}",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "input": "Amount",
+      "content1": "How much would you like to contribute to the campaign?",
+      "content2": "The minimum amount of this campaign is ",
+      "content3": " wei.",
+      "content4": "Each person can make at most 1 contribution."
+    },
     "lockButton": "Lock",
     "unlockButton": "Unlock",
     "createCampaignForm": {

@@ -2,11 +2,7 @@ import useTranslation from "next-translate/useTranslation";
 import React, { useContext } from "react";
 import { Button, Menu, SemanticWIDTHS } from "semantic-ui-react";
 import { CampaignStatus, CampaignStatusProps } from "^@components/containers";
-import {
-  ContributeButton,
-  LockButton,
-  UnlockButton,
-} from "^@containers/common";
+import { ContributeModal, LockButton, UnlockButton } from "^@containers/common";
 import { CampaignInfoDetailContext } from "^@contexts";
 import { color } from "^@styles/global";
 
@@ -53,7 +49,7 @@ export const CampaignProfileStatus = () => {
       </Menu>
       <div style={{ margin: "2em" }}>
         <Button.Group>
-          <ContributeButton />
+          <ContributeModal />
           {campaignInfo &&
             (campaignInfo.isLocked ? <UnlockButton /> : <LockButton />)}
         </Button.Group>

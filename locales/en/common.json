@@ -24,7 +24,9 @@
     },
     "campaign": {
       "locked": "This campaign is locked",
-      "open": "This campaign is open"
+      "open": "This campaign is open",
+      "owner": "You are the owner of this campaign",
+      "patron": "You are a patron of this campaign"
     }
   },
   "containers": {

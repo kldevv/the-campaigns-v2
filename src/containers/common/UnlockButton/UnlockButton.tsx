@@ -51,7 +51,7 @@ export const UnlockButton = () => {
       style={{
         color: color["dark-grey"],
         backgroundColor: color.white,
-        borderColor: color["dark-grey"],
+        borderColor: color["light-grey"],
         borderStyle: "solid",
       }}
     />

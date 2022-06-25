@@ -116,6 +116,12 @@
     },
     "campaign": {
       "title": "Explore Campaigns"
+    },
+    "campaignDetail": {
+      "screen2": {
+        "requests": "Requsets",
+        "events": "Events"
+      }
     }
   }
 }

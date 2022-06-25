@@ -1,6 +1,7 @@
 import useTranslation from "next-translate/useTranslation";
 import React from "react";
 import { Header, Icon, Menu, SemanticICONS, Tab } from "semantic-ui-react";
+import { RequestsExplorer } from "^@containers/screens";
 import { color, font } from "^@styles/global";
 
 export const CampaignDetailScreen2 = () => {
@@ -26,7 +27,7 @@ export const CampaignDetailScreen2 = () => {
   const panes = [
     {
       menuItem: menuItems[0],
-      render: () => <Header>Hello</Header>,
+      render: () => <RequestsExplorer />,
     },
     {
       menuItem: menuItems[1],

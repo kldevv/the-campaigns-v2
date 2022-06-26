@@ -22,7 +22,7 @@ export const CustomizedExplorer = ({ panes }: CustomizedExplorerProps) => {
           menu={{
             fluid: true,
             vertical: true,
-            tabular: "left",
+            tabular: true,
           }}
           panes={panes}
         />

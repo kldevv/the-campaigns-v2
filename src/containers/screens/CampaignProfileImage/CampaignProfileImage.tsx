@@ -15,7 +15,6 @@ export const CampaignProfileImage = () => {
           name="paper plane"
           circular
           size="massive"
-          zIndex="1000"
           style={{
             color: color["dark-purple"],
             backgroundColor: "white",

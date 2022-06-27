@@ -14,6 +14,18 @@
       }
     }
   },
+  "components": {
+    "requestCard": {
+      "id": "ID",
+      "amount": "Amount",
+      "recipient": "Recipient",
+      "description": "Description",
+      "status": "Status",
+      "required": "Required APR.",
+      "current": "Current APR. / REJ.",
+      "action": "Action"
+    }
+  },
   "addons": {
     "walletNotConnected": {
       "title": "Wallet is Not Connected",

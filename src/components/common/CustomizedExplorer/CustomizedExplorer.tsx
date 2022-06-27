@@ -5,6 +5,7 @@ import {
   Tab,
   TabPaneProps,
 } from "semantic-ui-react";
+import { color } from "^@styles/global";
 
 export interface CustomizedExplorerProps {
   panes: {

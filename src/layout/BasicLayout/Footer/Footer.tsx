@@ -15,7 +15,7 @@ export const Footer = () => {
           padding: "1.5em 0em",
         }}
       >
-        <Container text textAlign="center">
+        <Container fluid textAlign="center">
           <Header
             as="h2"
             content={t("layout.footer.welcome")}

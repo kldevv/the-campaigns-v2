@@ -110,8 +110,6 @@ export const NewRequestModal = () => {
     return null;
   }
 
-  console.log(values);
-
   return (
     <Modal
       onOpen={onOpenHandler}

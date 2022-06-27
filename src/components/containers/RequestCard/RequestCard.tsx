@@ -21,7 +21,7 @@ export const RequestCard = ({ requestInfo }: RequestCardProps) => {
     rejectionCount,
     status,
   } = requestInfo;
-  console.log(requestInfo);
+
   return (
     <Card fluid>
       <Grid celled columns={4}>
@@ -66,7 +66,7 @@ export const RequestCard = ({ requestInfo }: RequestCardProps) => {
         <Grid.Row>
           <Grid.Column width={2}>
             <h4>Status</h4>
-            <p>{RequestStatus[status]}</p>
+            <p>{status}</p>
           </Grid.Column>
           <Grid.Column>
             <h4>Required Apr.</h4>

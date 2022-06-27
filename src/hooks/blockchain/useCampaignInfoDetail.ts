@@ -7,6 +7,7 @@ import { CampaignInfoDetail } from "^@hooks/CampaignInfoDetail";
 import { RequestInfo } from "^@hooks/RequestInfo";
 import { CampaignInfo } from "^@hooks/CampaignInfo";
 import { WalletStatus } from "^@hooks/WalletStatus";
+import { RequestStatus } from "^@hooks/RequestStatus";
 
 export interface useCampaignInfoDetailArgs {
   address: string;
@@ -86,6 +87,7 @@ export const useCampaignInfoDetail = ({
 
               const requestInfo = {
                 ...request,
+                status: RequestStatus[request.status],
                 requestID: id,
                 userApproved,
                 userRejected,
@@ -94,8 +96,8 @@ export const useCampaignInfoDetail = ({
             } catch (err) {
               console.log(err);
             }
-            return requestInfoes;
           }
+          return requestInfoes;
         };
         const requestInfoes = await getCampaignRequestInfoes();
         /**

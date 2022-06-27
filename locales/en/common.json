@@ -23,7 +23,11 @@
       "status": "Status",
       "required": "Required APR.",
       "current": "Current APR. / REJ.",
-      "action": "Action"
+      "action": "Action",
+      "resolved": "This request is resolved",
+      "canceled": "This request is canceled",
+      "approved": "You have approved this request",
+      "rejected": "You have rejected this request"
     },
     "customizedRequestModal": {
       "title": "{{action}} Request",

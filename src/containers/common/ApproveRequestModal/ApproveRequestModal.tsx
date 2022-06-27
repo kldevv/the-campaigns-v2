@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CustomizedRequestModal, RequestAction } from "^@components/common";
 import { CampaignInfoDetailContext } from "^@contexts";
 import { RequestStatus } from "^@hooks/RequestStatus";
+import { approveRequest } from "^@services/blockchain/approveRequest";
 
 export interface ApproveRequestModalProps {
   requestID;
@@ -26,7 +27,7 @@ export const ApproveRequestModal = ({
         requestInfoes[requestID].status !== RequestStatus[RequestStatus.Active]
       }
       onConfirm={async () => {
-        console.log("confirm");
+        await approveRequest(campaignInfo.address, requestID);
       }}
     />
   );

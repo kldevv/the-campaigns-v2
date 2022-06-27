@@ -24,7 +24,7 @@ export const CustomizedRequestModal = ({
   onConfirm,
 }: CustomizedRequestModalProps) => {
   const [open, setOpen] = useState(false);
-  const [triggerLoading, setTriggerLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { t } = useTranslation("common");
 
   const onCloseHandler = useCallback(() => {
@@ -36,14 +36,16 @@ export const CustomizedRequestModal = ({
   }, []);
 
   const onConfirmHandlerAsync = async () => {
-    setTriggerLoading(true);
+    setLoading(true);
     try {
       await onConfirm();
+      window.location.reload();
     } catch (err) {
       console.log(err);
+    } finally {
+      setLoading(false);
+      onCloseHandler();
     }
-    setTriggerLoading(false);
-    onCloseHandler();
   };
 
   const onConfirmHandler = useCallback(() => {
@@ -59,7 +61,7 @@ export const CustomizedRequestModal = ({
         <CustomizedButton
           size="small"
           content={action}
-          loading={triggerLoading}
+          loading={false}
           disabled={triggerDisabled}
           style={triggerStyle}
         />
@@ -94,7 +96,7 @@ export const CustomizedRequestModal = ({
           content={action}
           onClick={onConfirmHandler}
           size="small"
-          loading={false}
+          loading={loading}
         />
       </Modal.Actions>
     </Modal>

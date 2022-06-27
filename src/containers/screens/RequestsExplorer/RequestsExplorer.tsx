@@ -17,7 +17,6 @@ export const RequestsExplorerMenuItem = {
 
 export const RequestsExplorer = () => {
   const { requestInfoes } = useContext(CampaignInfoDetailContext);
-  console.log(requestInfoes);
 
   const panes = Object.keys(RequestsExplorerMenuItem).map((label) => {
     return {
@@ -33,7 +32,6 @@ export const RequestsExplorer = () => {
         </Menu.Item>
       ),
       render: () => {
-        console.log(label);
         return (
           requestInfoes && (
             <div>

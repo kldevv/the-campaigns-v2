@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CustomizedRequestModal, RequestAction } from "^@components/common";
 import { CampaignInfoDetailContext } from "^@contexts";
 import { RequestStatus } from "^@hooks/RequestStatus";
+import { rejectRequest } from "^@services/blockchain/rejectRequest";
 import { color } from "^@styles/global";
 
 export interface RejectRequestModalProps {
@@ -28,7 +29,7 @@ export const RejectRequestModal = ({ requestID }: RejectRequestModalProps) => {
         requestInfoes[requestID].status !== RequestStatus[RequestStatus.Active]
       }
       onConfirm={async () => {
-        console.log("confirm");
+        await rejectRequest(campaignInfo.address, requestID);
       }}
     />
   );

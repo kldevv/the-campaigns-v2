@@ -50,7 +50,7 @@ export const CustomizedRequestModal = ({
 
   const onConfirmHandler = useCallback(() => {
     onConfirmHandlerAsync();
-  }, []);
+  }, [onConfirm, requestID]);
 
   return (
     <Modal

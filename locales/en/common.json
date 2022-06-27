@@ -24,6 +24,11 @@
       "required": "Required APR.",
       "current": "Current APR. / REJ.",
       "action": "Action"
+    },
+    "customizedRequestModal": {
+      "title": "{{action}} Request",
+      "content": "Do you want to {{action}} request ID {{requestID}} of {{campaignName}}?",
+      "cancel": "Cancel"
     }
   },
   "addons": {
@@ -115,6 +120,9 @@
       "totalBalance": "Total Balance",
       "activeBalance": "Active Balance",
       "minContribution": "Minimum Contribution"
+    },
+    "approveRequestModal": {
+      "trigger": "Approve"
     }
   },
   "screens": {

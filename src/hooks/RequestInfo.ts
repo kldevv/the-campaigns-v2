@@ -8,7 +8,7 @@ export type RequestInfo = {
   targetApprovalCount: number;
   recipient: string;
   requestDescription: string;
-  status: RequestStatus;
-  currentUserApproved: boolean;
-  currentUserRejected: boolean;
+  status: string;
+  userApproved: boolean;
+  userRejected: boolean;
 };

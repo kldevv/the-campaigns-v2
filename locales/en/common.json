@@ -36,8 +36,29 @@
     "createButton": {
       "create": "Create"
     },
+    "newRequestModal": {
+      "button": "New Request",
+      "header": "Issue a New Request for {{name}}",
+      "confirm": "Issue",
+      "cancel": "Cancel",
+      "required": " Required fields",
+      "fields": {
+        "amount": {
+          "label": "Amount",
+          "description": "How much to send to the recipient"
+        },
+        "recipient": {
+          "label": "Recipient",
+          "description": "Whom the amount is sent to"
+        },
+        "description": {
+          "label": "Description",
+          "description": "Extra description for this request"
+        }
+      }
+    },
     "contributeModal": {
-      "button": "contribute",
+      "button": "Contribute",
       "header": "Contribution to {{name}}",
       "confirm": "Confirm",
       "cancel": "Cancel",

@@ -79,6 +79,7 @@ export const CreateCampaignForm = ({ fields }: CreateCampaignFormProps) => {
         minContribution,
         description,
       });
+      setValues({});
       setSuccess(true);
     } catch (err) {
       setError(err.message);

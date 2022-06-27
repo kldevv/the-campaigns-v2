@@ -58,14 +58,14 @@ export const ContributeModal = () => {
       trigger={
         <Button
           icon="user"
-          content="Contribute"
+          content={t("containers.contributeModal.button")}
           disabled={campaignInfo.isPatron || campaignInfo.isLocked}
           style={{ fontFamily: font.poppins }}
         />
       }
       open={open}
     >
-      <Modal.Header style={{ fontFamily: font.poppins }}>
+      <Modal.Header style={{ fontFamily: font.poppins, fontSize: "2em" }}>
         {t("containers.contributeModal.header", {
           name: campaignInfo.name,
         })}

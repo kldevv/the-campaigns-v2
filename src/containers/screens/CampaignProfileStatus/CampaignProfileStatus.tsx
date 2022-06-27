@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { Button, Menu, SemanticWIDTHS } from "semantic-ui-react";
 import { CampaignStatus, CampaignStatusProps } from "^@components/containers";
 import { ContributeModal, LockButton, UnlockButton } from "^@containers/common";
+import { NewRequestModal } from "^@containers/common/NewRequestModal/NewRequestModal";
 import { CampaignInfoDetailContext } from "^@contexts";
 import { color } from "^@styles/global";
 
@@ -53,6 +54,9 @@ export const CampaignProfileStatus = () => {
           {campaignInfo &&
             (campaignInfo.isLocked ? <UnlockButton /> : <LockButton />)}
         </Button.Group>
+      </div>
+      <div style={{ margin: "2em" }}>
+        <NewRequestModal />
       </div>
     </>
   );

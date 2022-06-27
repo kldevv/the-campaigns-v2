@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { IssueRequestFormMetaList } from "^@containers/common/NewRequestModal/NewRequestModal";
 import { CreateCampaignFormMetaList } from "^@screens/create-campaign";
 
 export interface CustomizedInputProps {
   /**
    * Action to take when input changes
    */
-  setParentValue: (meta: CreateCampaignFormMetaList, value: string) => void;
+  setParentValue: (
+    meta: CreateCampaignFormMetaList | IssueRequestFormMetaList,
+    value: string
+  ) => void;
   /**
    * Input type
    */
@@ -13,7 +17,7 @@ export interface CustomizedInputProps {
   /**
    * Id to set the parent values
    */
-  meta: CreateCampaignFormMetaList;
+  meta: CreateCampaignFormMetaList | IssueRequestFormMetaList;
 }
 
 export const CustomizedInput = ({

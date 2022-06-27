@@ -1,5 +1,8 @@
 export type EventInfo = {
   blockNumber: number;
-  event: any;
-  returnValues: any;
+  event: string;
+  returnValues: {
+    from: string;
+    requestID: number;
+  };
 };

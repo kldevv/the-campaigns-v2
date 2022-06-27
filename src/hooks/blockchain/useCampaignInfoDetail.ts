@@ -8,6 +8,7 @@ import { RequestInfo } from "^@hooks/RequestInfo";
 import { CampaignInfo } from "^@hooks/CampaignInfo";
 import { WalletStatus } from "^@hooks/WalletStatus";
 import { RequestStatus } from "^@hooks/RequestStatus";
+import { EventTypes } from "^@hooks/EventTypes";
 
 export interface useCampaignInfoDetailArgs {
   address: string;

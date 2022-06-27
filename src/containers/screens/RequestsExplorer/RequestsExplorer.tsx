@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Menu } from "semantic-ui-react";
-import { CustomizedExplorer } from "^@components/common/CustomizedExplorer/CustomizedExplorer";
+import { CustomizedExplorer } from "^@components/common";
 import { RequestCard } from "^@components/containers";
 import { CampaignInfoDetailContext } from "^@contexts";
 import { RequestStatus } from "^@hooks/RequestStatus";
@@ -43,7 +43,8 @@ export const RequestsExplorer = () => {
                 )
                 .map((requestInfo, index) => (
                   <RequestCard key={index} requestInfo={requestInfo} />
-                ))}
+                ))
+                .reverse()}
             </div>
           )
         );

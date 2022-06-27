@@ -127,6 +127,14 @@
     },
     "approveRequestModal": {
       "trigger": "Approve"
+    },
+    "eventsExplorer": {
+      "header": {
+        "type": "Type",
+        "description": "Description",
+        "blockNumber": "Block Number"
+      },
+      "description": "From: {{address}}, RequestID: {{requestID}}"
     }
   },
   "screens": {

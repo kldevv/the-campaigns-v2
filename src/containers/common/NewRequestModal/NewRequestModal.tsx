@@ -91,6 +91,7 @@ export const NewRequestModal = () => {
         amount: Math.max(0, parseInt(values[IssueRequestFormMetaList.Amount])),
         description: values[IssueRequestFormMetaList.Description],
       });
+      window.location.reload();
     } catch (err) {
       console.log(err);
     } finally {

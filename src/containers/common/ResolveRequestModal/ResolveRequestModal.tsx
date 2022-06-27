@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CustomizedRequestModal, RequestAction } from "^@components/common";
 import { AccountContext, CampaignInfoDetailContext } from "^@contexts";
 import { RequestStatus } from "^@hooks/RequestStatus";
+import { resolveRequest } from "^@services/blockchain/resolveRequest";
 import { color } from "^@styles/global";
 
 export interface ResolveRequestModalProps {
@@ -34,7 +35,7 @@ export const ResolveRequestModal = ({
         campaignInfo.owner !== account
       }
       onConfirm={async () => {
-        console.log("confirm");
+        await resolveRequest(campaignInfo.address, requestID);
       }}
     />
   );

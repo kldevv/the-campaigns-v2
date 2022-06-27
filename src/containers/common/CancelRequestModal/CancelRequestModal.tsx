@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CustomizedRequestModal, RequestAction } from "^@components/common";
 import { AccountContext, CampaignInfoDetailContext } from "^@contexts";
 import { RequestStatus } from "^@hooks/RequestStatus";
+import { cancelRequest } from "^@services/blockchain/cancelRequest";
 import { color } from "^@styles/global";
 
 export interface CancelRequestModalProps {
@@ -34,7 +35,7 @@ export const CancelRequestModal = ({ requestID }: CancelRequestModalProps) => {
         campaignInfo.owner !== account
       }
       onConfirm={async () => {
-        console.log("confirm");
+        await cancelRequest(campaignInfo.address, requestID);
       }}
     />
   );

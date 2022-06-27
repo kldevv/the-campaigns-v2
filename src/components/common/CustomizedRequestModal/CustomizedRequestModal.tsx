@@ -76,7 +76,7 @@ export const CustomizedRequestModal = ({
         <div style={{ fontFamily: font.poppins }}>
           {t("components.customizedRequestModal.content", {
             requestID: requestID,
-            action: action,
+            action: action.toLowerCase(),
             campaignName: campaignName,
           })}
         </div>

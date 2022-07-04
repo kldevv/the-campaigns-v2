@@ -175,6 +175,26 @@
         "requests": "Requests",
         "events": "Events"
       }
+    },
+    "about": {
+      "screen1": {
+        "header": "About",
+        "content": "TheCampaign is an interactive website that help solve issues that might happen in the ordinary crowd sourcing platform, where the campaign owners break the promises and misuse the funding from time to time should the platform be lacking in proper regulations.",
+        "howItWorks": {
+          "header": "How It Works",
+          "content": "We put all the campaigns on the Ethereum chain in the forms of smart contracts, where the owner, patrons, and all the interaction are recorded. The owner needs approvals more than half of the current patrons to transfer the funding to a different Ethereum address."
+        },
+        "stepByStep": {
+          "header": "Step by Step",
+          "content": {
+            "li1": "On the Create page, the users can create a customized campaign by filling out the information, including the campaign name, the minimum contribution to join the campaign, and optionally the description. TheCampaign will take the information to the Master Campaign and create your own smart contract",
+            "li2": "On the Explore page, the users can explore all the campaigns launched through the Master Campaign, and the users can continue exploring the details of any of those by clicking on the campaign card",
+            "li3": "While exploring the campaign detail, any users can choose to contribute and join the campaign as long as the minimum contribution is match. Each address can only contribute once. The owner (creator) of the campaign can lock the campaign if there are more than 1 patron",
+            "li4": "Once the campaign is locked, the campaign owner can issue a new request to distribute the reserved Ether in the campaign, freeze the requested amount, and reduce the active reserve, If there are more than half of the patron approve such a request, the request is approved and wait for the owner to resolve and send the Ether. If the patron is already voted, or the request is rejected or canceled, the patrons can no longer participate in the request",
+            "li5": "The owner can choose to unlock the campaign to allow more new users to join the campaign, and thus raise the reserve for more future requests. While the number of patrons increases, the required approval for the request to be approved is also increased"
+          }
+        }
+      }
     }
   }
 }

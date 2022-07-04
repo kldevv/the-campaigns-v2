@@ -9,6 +9,9 @@ export interface InfoCardDetailProps {
 
 export const InfoCardDetail = ({ campaignInfo }: InfoCardDetailProps) => {
   const { t } = useTranslation("common");
+  if (!campaignInfo) {
+    return null;
+  }
   const { name, address, description, patronCount } = campaignInfo;
   return (
     <>

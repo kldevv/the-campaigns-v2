@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Divider } from "semantic-ui-react";
 import { BasicScreenContainer } from "^@components/screen";
-import { AboutScreen1 } from "^@screens/about";
+import { AboutScreen1, AboutScreen2 } from "^@screens/about";
 
 const About = () => {
   return (
@@ -10,6 +10,7 @@ const About = () => {
       <Container style={{ margin: "4em" }}>
         <Divider />
       </Container>
+      <AboutScreen2 />
     </BasicScreenContainer>
   );
 };

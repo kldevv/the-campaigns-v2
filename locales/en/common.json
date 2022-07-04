@@ -194,6 +194,17 @@
             "li5": "The owner can choose to unlock the campaign to allow more new users to join the campaign, and thus raise the reserve for more future requests. While the number of patrons increases, the required approval for the request to be approved is also increased"
           }
         }
+      },
+      "screen2": {
+        "header": "The Developerment",
+        "developer": {
+          "header": "Meet the Developer",
+          "content": "Kuan-You Lin (Yoyo) is a software engineer who love learning and making things happened. Learn more about him by visiting one of his profile websites."
+        },
+        "technology": {
+          "header": "Technology Behind",
+          "content": "TheCampaign is created by using: typescript, react.js, next.js, react-semantic-ui, solc, ganache, truffle, solidity, web3, eslint, mocha, react-i18next"
+        }
       }
     }
   }

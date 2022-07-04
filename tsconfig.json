@@ -42,7 +42,8 @@
       "^@screens": ["./screens"],
       "^@screens/*": ["./screens/*"],
       "^@Campaign": ["./contract/build/Campaign.build.json"],
-      "^@CampaignManager": ["./contract/build/CampaignManager.build.json"]
+      "^@CampaignManager": ["./contract/build/CampaignManager.build.json"],
+      "^@images/*": ["./images/*"]
     }
   },
   "target": "es5",
@@ -51,13 +52,6 @@
   "strict": true,
   "allowJs": true,
   "incremental": true,
-  "include": [
-    "**/*.ts",
-    "next-env-.d.ts",
-    "**/*.tsx",
-    "**/build/*.build.json"
-    // ".storybook/**/*.ts",
-    // ".storybook/**/*.tsx"
-  ],
+  "include": ["**/*.ts", "next-env-.d.ts", "**/*.tsx", "**/build/*.build.json"],
   "exclude": ["node_module"]
 }

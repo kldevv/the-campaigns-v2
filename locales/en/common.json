@@ -179,7 +179,7 @@
     "about": {
       "screen1": {
         "header": "About",
-        "content": "TheCampaign is an interactive website that help solve issues that might happen in the ordinary crowd sourcing platform, where the campaign owners break the promises and misuse the funding from time to time should the platform be lacking in proper regulations.",
+        "content": "TheCampaign is an interactive website that helps solve issues that might happen in the ordinary crowdsourcing platform, where the campaign owners break the promises and misuse the funding from time to time should the platform be lacking in proper regulations.",
         "howItWorks": {
           "header": "How It Works",
           "content": "We put all the campaigns on the Ethereum chain in the forms of smart contracts, where the owner, patrons, and all the interaction are recorded. The owner needs approvals more than half of the current patrons to transfer the funding to a different Ethereum address."
